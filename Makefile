@@ -4,7 +4,7 @@ TARGETS = geomimg
 all: $(TARGETS)
 
 %: cmd/%/main.go
-	go build -o $@ $^
+	go build -ldflags="-w -s" -o $@ $^
 
 .PHONY: clean
 clean:
